@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Travel.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Travel.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Travel.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Travel.Application.dll": {}
+        }
+      },
+      "Travel.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Travel.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Travel.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Travel.Application/1.0.0": {
+      "type": "project",
+      "path": "../../core/Travel.Application/Travel.Application.csproj",
+      "msbuildProject": "../../core/Travel.Application/Travel.Application.csproj"
+    },
+    "Travel.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../core/Travel.Domain/Travel.Domain.csproj",
+      "msbuildProject": "../../core/Travel.Domain/Travel.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Travel.Application >= 1.0.0",
+      "Travel.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/nuttapon/.nuget/packages/": {},
@@ -35,7 +73,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/nuttapon/Lab/NET/Travel/src/core/Travel.Application/Travel.Application.csproj": {
+              "projectPath": "/Users/nuttapon/Lab/NET/Travel/src/core/Travel.Application/Travel.Application.csproj"
+            },
+            "/Users/nuttapon/Lab/NET/Travel/src/core/Travel.Domain/Travel.Domain.csproj": {
+              "projectPath": "/Users/nuttapon/Lab/NET/Travel/src/core/Travel.Domain/Travel.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
